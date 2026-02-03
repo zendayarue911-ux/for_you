@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For you💌!!</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: white;
+  width: 90%;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #ff4b5c;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yes {
+  background: #ff4b5c;
+  color: white;
+}
+
+#no {
+  background: #ccc;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="box">
+  <h1></h1>
+  <p id="text">Helloo kichuuu😁!!..I made something special for you😜</p>
+  <button onclick="next()">Tap here 💌</button>
+</div>
+
+<script>
+let step = 0;
+
+function next() {
+  step++;
+  if (step === 1) {
+    text.innerHTML = "I Love you da naariii😭🫂💕";
+  } else if (step === 2) {
+    text.innerHTML = "You are the greatest thing that has ever happened in my life🥹🫂";
+  } else if (step === 3) {
+    text.innerHTML = "Thank you for always being there for me🫂💕";
+  } else if (step === 4) {
+    text.innerHTML = "Mwaaaaahhh💋";
+  } else if (step === 5) {
+    text.innerHTML = "Love you Kichuu🙈💗";
+  } else {
+    showProposal();
+  }
+}
+
+function showProposal() {
+  box.innerHTML = `
+    <h1>Will you be my Valentine🫣? 💍💖</h1>
+    <button id="yes" onclick="yes()">Yes 💘</button>
+    <button id="no" onmouseover="move()">No 🙈</button>
+  `;
+}
+
+function move() {
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 50);
+  document.getElementById("no").style.left = x + "px";
+  document.getElementById("no").style.top = y + "px";
+}
+
+function yes() {
+  box.innerHTML = `
+    <h1>Awwwwwww🙈😘💋💕</h1>
+    <p>I Love You My Chundhari Vaveeeee😘💋😁🫂</p>
+  `;
+}
+</script>
+
+</body>
+</html>
